@@ -13,7 +13,7 @@ function App() {
   const routes=createBrowserRouter([
         {path:'',element:<Layout/>,errorElement:<NotFound/>,children:[
           {index:true,element:<Home/>},
-           {path:'aboy',element:<About/>},
+           {path:'about',element:<About/>},
           {path:'blog',element:<Blog/>},
           {path:'services',element:<Services/>},
           {path:'pricing',element:<Pricing/>},
