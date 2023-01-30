@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import Home from '../Home/Home';
 import Layout from '../Layout/Layout';
 import Blog from '../Blog/Blog';
@@ -10,6 +10,7 @@ import NotFound from '../NotFound/NotFound';
 import './App.scss';
 
 function App() {
+
   const routes=createBrowserRouter([
         {path:'',element:<Layout/>,errorElement:<NotFound/>,children:[
           {index:true,element:<Home/>},
@@ -20,6 +21,8 @@ function App() {
           {path:'contact',element:<Contact/>},
         ]}
   ])
+
+ 
   return (
     <div className="App">
        <RouterProvider router={routes}>
