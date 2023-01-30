@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
+import HaveQuestion from '../Shared/HaveQuestion/HaveQuestion';
 
 export default function Layout() {
   const location=useLocation();
@@ -20,6 +21,7 @@ export default function Layout() {
    <>
       <Navbar/>
       <Outlet/>
+      <HaveQuestion/>
       <Footer/>
    </>
   )
