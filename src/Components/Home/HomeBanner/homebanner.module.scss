@@ -1,0 +1,39 @@
+@import '../../../colors.scss';
+.banner{
+    background-image: url('../../../assets/images/HomeBanner.png');
+    background-size: cover;
+    background-position: center center;
+    height:calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   & > div{
+      flex-grow: 2;
+         & > div{
+            width: 80%;
+            input{
+                &:focus{
+                    border:1px solid $borderColor;
+                }
+            }
+        }
+   }
+  
+}
+
+@media screen and (min-width :1200px){
+    .banner{
+   & > div{
+         & > div{
+            & > div > div:nth-of-type(2){
+                border-right: 1px solid  $borderColor;
+                border-left: 1px solid  $borderColor;
+            }
+              & > div > div:nth-of-type(3){
+                border-right: 1px solid  $borderColor;
+            }
+        }
+   }
+  
+}
+}
