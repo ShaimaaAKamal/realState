@@ -9,9 +9,10 @@ export default function Navbar() {
       open.classList.toggle('d-none');
       close.classList.toggle('d-none');
   }
+  const navLinks=[{title:'Home',url:''},{title:'About',url:'/about'},{title:'Blog',url:'/blog'},{title:'Services',url:'/services'},{title:'Pricing',url:'/pricing'},{title:'Contact',url:'/contact'}]
   return (
     <div>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg bg-white position-fixed w-100">
   <div className="container-lg px-lg-4 px-0">
     <NavLink className="navbar-brand ms-2 ms-lg-0" to="">
       <img src={logo} alt="Rent up logo images" className={styles.logoWidth} />
@@ -22,25 +23,13 @@ export default function Navbar() {
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0 px-4 px-lg-0">
-        <li className="nav-item">
-             <NavLink className="nav-link px-lg-3" aria-current="page" to="">Home</NavLink>
-        </li>
-        <li className="nav-item">
-              <NavLink className="nav-link px-lg-3" to="/about">About</NavLink>
-        </li>
-         <li className="nav-item">
-              <NavLink className="nav-link px-lg-3" to="/services">Services</NavLink>
-        </li>
-          <li className="nav-item">
-             <NavLink className="nav-link px-lg-3" to="/blog">Blog</NavLink>
-          </li>
-           <li className="nav-item">
-             <NavLink className="nav-link  px-lg-3" to="/pricing">Pricing</NavLink>
-          </li>
-           <li className="nav-item">
-             <NavLink className="nav-link  px-lg-3" to="/contact">Contact</NavLink>
-          </li>
-      
+        {
+          navLinks.map((link,index)=> 
+            <li className="nav-item">
+              <NavLink key={index} className="nav-link px-lg-3" to={link.url}>{link.title}</NavLink>
+           </li>
+          )
+        }
       </ul>
       <form className="d-none d-lg-flex align-items-center" role="search">
         <span>
