@@ -20,9 +20,11 @@ export default function Layout() {
   return (
    <>
       <Navbar/>
-      <Outlet/>
-      <HaveQuestion/>
-      <Footer/>
+     <div className="parent">
+        <Outlet/>
+        <HaveQuestion/>
+        <Footer/>
+     </div>
    </>
   )
 }
